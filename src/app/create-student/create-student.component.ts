@@ -44,8 +44,8 @@ export class CreateStudentComponent {
   constructor(public dataService: DataService) { }
 
 addCvCollection( name: string, contactNumber: string, email: string, education: EducationEntry[], experience: ExperienceEntry[], certification: string[], languages: string[] ) {
-  this.dataService.createCvCollection( name, contactNumber, email, education, experience, certification, languages );
-  this.readCvCollection()
+  // this.dataService.createCvCollection( name, contactNumber, email, education, experience, certification, languages );
+  // this.readCvCollection()
 
   // alert(name +" "+ email +" "+  contactNumber +" "+ education +" "+ experience +" "+ certification +" "+ languages)
   // // console.log(education)
@@ -55,7 +55,7 @@ addCvCollection( name: string, contactNumber: string, email: string, education: 
 
 async readCvCollection() {
 // console.log(this.dataService.getCvCollection())
-  this.database= await this.dataService.getCvCollection();
+  //this.database= await this.dataService.getCvCollection();
 }
 
 addEducation() {
