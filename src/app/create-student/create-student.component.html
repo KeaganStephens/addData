@@ -1,0 +1,145 @@
+<!-- the main form, should break into smaller parts for future use-->
+<form (ngSubmit)="addCvCollection(name, contactNumber, email, educationList, experienceList, certificationList, languageList)" id="SubmitForm">
+    <!-- Name Section -->
+    <label for="name" class="collectionLabel">Name:</label>
+    <div class="input-container">
+        <input type="text" id="name" name="name" [(ngModel)]="name" required class="collectionInput">
+    </div>
+    <br>
+    <!-- contactNumber Section -->
+    <label for="contactNumber" class="collectionLabel">Contact Number:</label>
+    <div class="input-container">
+        <input type="text" id="contactNumber" [(ngModel)]="contactNumber" required name="contactNumber" class="collectionInput">
+    </div>
+    <br>
+    <!-- email Section -->
+    <label for="email" class="collectionLabel">Email:</label>
+    <div class="input-container">
+        <input type="text" id="email" name="email" class="collectionInput" [(ngModel)]="email" required>
+    </div>
+    <br>
+  
+    <!-- Education Section -->
+   
+    <label for="education" class="education">Education:</label>
+    <button type="button" (click)="addEducation()" class="buttonAddEducation add-icon">+</button>
+    <div class="input-container">
+        <div class="education-section">
+            <div class="degree-section">
+                <div class="form-group">
+                    <label for="school" class="label">School Name:</label>
+                    <input type="text" id="school" name="school" [(ngModel)]="educationList[educationList.length - 1].school" class="input">
+                </div>
+            
+                <div class="form-group spaceTop">
+                    <label class="label" for="fieldOfStudy">Field of Study:</label>
+                    <input type="text" id="fieldOfStudy" name="fieldOfStudy" [(ngModel)]="educationList[educationList.length - 1].fieldOfStudy" class="input">
+                </div> 
+        
+            </div>
+            <div  class="degree-section">
+            <div class="form-group">
+        
+                <label for="degree" class="label">Degree Name:</label>
+                <input id="degree" name="degree" [(ngModel)]="educationList[educationList.length - 1].degree" type="text" class="input">
+                
+            </div>
+            <div class="date-section spaceTop">
+                <div class="form-group">
+        
+                <label for="startDateOfEducation" class="label">Start Date:</label>
+                <input type="number" class="inputD" id="startDateOfEducation" name="startDateOfEducation" [(ngModel)]="educationList[educationList.length - 1].startDate">
+        
+                </div>
+                <div class="form-group">
+        
+                <label class="label" for="endDateOfEducation">End Date:</label>
+                <input type="number" class="inputD" id="endDateOfEducation" name="endDateOfEducation" [(ngModel)]="educationList[educationList.length - 1].endDate">
+        
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <label for="experience" class="education">Experience</label>
+    <button type="button" (click)="addExperience()" class="buttonAddEducation add-icon">+</button>
+    <div class="input-container">
+        <div class="education-section">
+            <div class="degree-section">
+                <div class="form-group">
+                    <label for="experienceTitle" class="label">Title:</label>
+                    <input type="text" id="experienceTitle" class="input" name="experienceTitle" [(ngModel)]="experienceList[experienceList.length - 1].title">
+                </div>
+            
+                <div class="form-group spaceTop">
+                    <label for="experienceLocation" class="label">Company location:</label>
+                    <input type="text" class="input" id="experienceLocation" name="experienceLocation" [(ngModel)]="experienceList[experienceList.length - 1].location">
+                  </div>
+        
+            </div>
+            <div  class="degree-section">
+                
+                <div class="form-group">
+                    <label for="experienceCompanyName" class="label">Company Name:</label>
+                    <input type="text" class="input" id="experienceCompanyName" name="experienceCompanyName" [(ngModel)]="experienceList[experienceList.length - 1].companyName">
+                  </div>
+
+            <div class="date-section spaceTop">
+                <div class="form-group">
+        
+                    <label for="experienceStartDate" class="label">Start Date:</label>
+                    <input type="text" class="inputD"  id="experienceStartDate" name="experienceStartDate" [(ngModel)]="experienceList[experienceList.length - 1].startDate">
+                  
+                </div>
+                <div class="form-group">
+        
+                    <label for="experienceEndDate" class="label">End Date:</label>
+                    <input type="text" class="inputD" id="experienceEndDate" name="experienceEndDate" [(ngModel)]="experienceList[experienceList.length - 1].endDate">
+        
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- ... (Previous code) ... -->
+    
+  <br>
+  <!-- Experience Section -->
+
+
+  <br>
+  <!-- Certification Section -->
+  <label for="certification" class="education">Certification:</label>
+  <button type="button" (click)="addCertification()" class="buttonAddEducation add-icon">+</button>
+  <div class="input-container">
+    <input type="text" id="certification" name="certification" [(ngModel)]="certificationList[certificationList.length - 1]" class="collectionInput">
+</div>
+  
+  <br>
+  
+  <!-- Languages Section -->
+  <label for="languages" class="education">Languages:</label>
+  <button type="button" (click)="addLanguage()" class="buttonAddEducation add-icon">+</button>
+    
+  <div>
+    <div class="input-container"> 
+        <input type="text" id="languages" name="languages" [(ngModel)]="languageList[languageList.length - 1]" class="collectionInput">
+    
+    </div>
+    
+  
+    <br>
+  </div>
+  
+  <!-- ... (Submit button and closing form tag) ... -->
+  
+  
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+  
+  
+  <p *ngFor="let entry of database">{{ entry.name }} - {{ entry.education[0].school }}</p>
+  
+  

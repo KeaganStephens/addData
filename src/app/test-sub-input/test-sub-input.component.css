@@ -1,0 +1,87 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.education-section {
+    border-radius: 3px;
+    border: 1px solid #283640;
+    background-color: #feffff;
+    align-self: stretch;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 8px 9px;
+  }
+
+  @media (max-width: 991px) {
+    .education-section {
+      max-width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0%;
+    flex-direction: column;
+  }
+
+  .label {
+    color: #283640;
+    font: 400 8px Lato, sans-serif;
+  }
+
+  .input {
+    border-radius: 3px;
+    border: 1px solid #283640;
+    background-color: #feffff;
+    display: flex;
+    height: 24px;
+    flex-direction: column;
+  }
+
+  .degree-section {
+    align-self: stretch;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0%;
+    flex-direction: column;
+  }
+
+  .flex-container {
+    display: flex;
+  }
+
+  .add-icon {
+    justify-content: center;
+    color: #feffff;
+    white-space: nowrap;
+    border-radius: 3px;
+    border: 1px solid #283640;
+    background-color: #283640;
+    align-self: start;
+    aspect-ratio: 1;
+    align-items: center;
+    height: 16px;
+    padding: 0 6px;
+    font: 400 10px Lato, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .add-icon {
+      white-space: initial;
+    }
+  }
+
+  .date-section {
+    display: flex;
+    margin-top: 9px;
+    align-items: start;
+    justify-content: space-between;
+    gap: 20px;
+  }

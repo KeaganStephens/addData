@@ -1,0 +1,7 @@
+.transparentBlue{
+    background-color: #283640E3;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+}
