@@ -5,3 +5,8 @@
     position: fixed;
     z-index: -1;
 }
+
+.addCV{
+    border-radius: 3px;
+    background-color: #283640;
+}
